@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Create{% endblock %}
+
+{% block head_includes %}
+<link href="{{ static('css/create-artwork/style.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+
+      <div class="card">
+        <div class="card-body">
+        	<div class="card-title"><h2>Finished!</h2></div>
+        	<div class="card-subtitle"><h4>You will receive an email when your image has finished processing (typically about 10 minutes).</h4></div>
+          
+
+        </div>
+      </div>
+ 
+
+{% else %}
+
+This is where we respectfully ask the user to either sign up or sign in.
+{% endif %}
+
+{% endblock %}

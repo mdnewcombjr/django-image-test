@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% block head %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Nukem Design, LLC">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>{% block title %}{% endblock %} - Loomit</title>
+
+    <!-- Vendor js -->
+    <script src="{{ static('js/vendor/vendors-head.js') }}"></script>
+    
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{{ static('css/vendor/style.css') }}" type="text/css" media="screen"/>
+    <!-- Custom styles for this template -->
+    <link href="{{ static('css/common/style.css') }}" rel="stylesheet">
+    <link href="{{ static('css/style.css') }}" rel="stylesheet">
+    {% endblock %}
+    {% block head_includes %}{% endblock %}
+  </head>
+
+  <body>
+  {% block navbar %}
+   <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+      <div class="container">
+        <a class="navbar-brand" href="{{ url('threadbuilder_app:cms_home') }}">Loomit</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Shop</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url('threadbuilder_app:create_artwork') }}">Create</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Gallery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+          </ul>
+          <div class="mt-2 mt-md-0">
+            {% if user.is_authenticated %}
+              <div class="dropdown show">
+                <a class="btn btn-light btn-sm dropdown-toggle" href="{{ url('threadbuilder_app:cms_home') }}" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  {{user.username}}
+                </a>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" href="#">Settings</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="{{ url('threadbuilder_app:logout_user') }}">Log out</a>
+                </div>
+              </div>
+            {% else %}
+              <a href="{{ url('threadbuilder_app:login_user') }}">Log in</a>
+
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </nav>
+    {% endblock %}
+
+    <main role="main" class="container">
+      {% block content %}{% endblock %}
+    </main>
+
+
+    <div id="footer" class="container">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <p class="lead">
+            {% block footer %}
+              &copy; Copyright 2018 by Nukem Design, LLC.
+            {% endblock %}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+    <script src="{{ static('js/vendor/vendors.js') }}"></script>
+    {% block script_includes %}{% endblock %}
+  </body>
+</html>

@@ -1,0 +1,73 @@
+
+
+// Bootswatch
+@import "../variables";
+
+// Required
+@import "../../vendor/bootstrap/scss/functions";
+@import "../../vendor/bootstrap/scss/variables";
+@import "../../vendor/bootstrap/scss/mixins";
+
+// Optional
+@import "../../vendor/bootstrap/scss/reboot";
+@import "../../vendor/bootstrap/scss/type";
+@import "../../vendor/bootstrap/scss/images";
+@import "../../vendor/bootstrap/scss/code";
+@import "../../vendor/bootstrap/scss/grid";
+
+// Bootswatch
+@import "../bootswatch";
+
+
+
+$theme-colors: (
+  "input_border": #9b9b9b,
+  "input_color": #4c4c4c, 
+  "neutral_border": #3f87a6,
+  "neutral_color": #29627e,
+);
+
+/*
+input {
+	color:  theme-color("input_color");
+	background: #fff;
+	border: 2px solid  theme-color("input_border");
+	padding: 6px 8px;
+	border-radius: 0px;
+}*/
+
+button {
+	cursor: pointer;
+	display: inline-block;
+	line-height: 1;
+	font-weight: 700;
+	letter-spacing: normal;
+	border: 2px solid theme-color("input_border");
+	background-color: #fff;
+	text-decoration: none;
+}
+
+#signup_box {
+
+	display: block;
+	margin: 20px auto 40px;
+	padding: 0;
+	position: relative;
+	width: 100%;
+	max-width: 775px;
+
+}
+
+/*
+#signup_box input {
+	width: 75%;
+	height: 50px;
+	display: block;
+  	color:  theme-color("input_color");
+	background: #fff;
+	border: 2px solid  theme-color("input_border");
+	padding: 6px 8px;
+	border-radius: 0px;
+	font-weight: 700;
+}*/
+

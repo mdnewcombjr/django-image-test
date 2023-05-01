@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}Create{% endblock %}
+
+{% block head_includes %}
+<link href="{{ static('css/create-artwork/style.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+
+      <div class="card">
+        <div class="card-body">
+        	<div class="card-title"><h2>Crop Image</2></div>
+
+           <form class="" id="image-crop" action="">
+            {{wizard.management_form}}
+
+            <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+            
+            <img class="uploaded-image" id="image-to-crop" url={{wizard.form.image}}/>
+
+              {{wizard.management_form}}
+
+              {% if wizard.form.forms %}
+                  {{ wizard.form.management_form }}
+                  {% for form in wizard.form.forms %}
+                      {{ form }}
+                  {% endfor %}
+              {% else %}
+                  {{ wizard.form }}
+              {% endif %}
+            <input type="submit" value="{{ _("submit") }}"/>
+          </form>
+
+        </div>
+      </div>
+ 
+
+{% else %}
+
+This is where we respectfully ask the user to either sign up or sign in.
+{% endif %}
+
+{% endblock %}
+
+{% block script_includes %}
+<script src="{{ static('js/image-crop/app.js') }}"></script>
+{% endblock %}

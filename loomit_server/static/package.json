@@ -1,0 +1,27 @@
+{
+  "name": "loomit-static",
+  "version": "1.0.0",
+  "description": "The required dependencies to build the Loomit static website files.",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-clean-css": "^3.9.4",
+    "gulp-flatmap": "^1.0.2",
+    "gulp-inject": "^4.3.2",
+    "gulp-sass": "^4.0.1",
+    "gulp-uglify": "^3.0.0",
+    "path": "^0.12.7",
+    "pump": "^3.0.0",
+    "yargs": "^11.0.0"
+  },
+  "devDependencies": {
+    "gulp-cli": "^2.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "mdn",
+  "license": "ISC"
+}

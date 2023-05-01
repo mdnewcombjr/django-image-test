@@ -1,0 +1,4 @@
+# Loomit Static File Build System
+The build system for this website is based on Gulp.  CSS and javascript are organized into modules, where each subdirectory in the `src/js` and `src/scss` folders represents a module.  Vendor files are included in every page, but modules can be included or excluded based on the page that is loaded.  The top-level module is included on every page. Each module's filename is constant (e.g. "app.js" or "style.css") but it is the path within the `dist/` directory which determines which page loads which module.  For example, the image upload page contains a link to the script in `dist/js/image-upload/app.js` for the code which is specific to that page.  
+
+TODO: This explanation should be written more carefully.

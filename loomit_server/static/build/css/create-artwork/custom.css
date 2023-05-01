@@ -1,0 +1,14 @@
+/*
+* @Author: mark
+* @Date:   2018-05-14 17:17:12
+* @Last Modified by:   mark
+* @Last Modified time: 2018-05-14 17:34:21
+*/
+.dropzone .dz-message {
+  font-weight: 400;
+  font-size: 20px; }
+
+.img-dropzone {
+  border: 2px dashed #0087F7;
+  border-radius: 5px;
+  background: white; }

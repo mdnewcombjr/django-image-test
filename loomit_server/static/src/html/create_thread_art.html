@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% block title %}Create{% endblock %}
+
+{% block head_includes %}
+<link href="{{ static('css/create-artwork/style.css') }}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+
+{% if user.is_authenticated %}
+
+      <div class="card">
+        <div class="card-body">
+        	<div class="card-title"><h2>Upload Image</2></div>
+          
+          <form id="img-form" action="/create" method="post" enctype="multipart/form-data">
+            
+            <div class="container">
+              <div class="row">
+                <div class="col-sm">
+                </div>
+                <div class="col-md">
+                  <img id="upload-image" src="{{ static('assets/upload-image.png') }}"></img>
+                </div>
+                <div class="col-sm">
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm">
+                  
+                </div>
+                <div class="col-md">
+                  <div class="d-flex justify-content-center">
+                    <label class="btn btn-default btn-light">
+                      Browse <input type="file" style="display: none;" accept="image/*" id="upload" name="file">
+                    </label>
+                  </div>
+                </div>
+                <div class="col-sm">
+                  <input class="btn btn-primary float-right" type="submit" id="submit-image" value="{{ _("Next") }}"/>
+                </div>
+              </div>
+              <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+              <input type="hidden" id="top_left_x" name="top_left_x">
+              <input type="hidden" id="top_left_y" name="top_left_y">
+              <input type="hidden" id="bottom_right_x" name="bottom_right_x">
+              <input type="hidden" id="bottom_right_y" name="bottom_right_y">
+              <input type="hidden" id="zoom" name="zoom">
+            </div>
+          </form>
+        
+        </div>
+      </div>
+     
+{% else %}
+
+This is where we respectfully ask the user to either sign up or sign in.
+{% endif %}
+
+{% endblock %}
+
+{% block script_includes %}
+<script src="{{ static('js/image-upload/app.js') }}"></script>
+  {% if user.is_authenticated %}
+  <script>
+    imageUploadPage.init();
+  </script>
+  {% endif %}
+{% endblock %}

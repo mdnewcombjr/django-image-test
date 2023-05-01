@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+{% block title %}Welcome{% endblock %}
+{% block content %}
+
+<div id="signup_box">
+<form method="post">
+	<input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
+<<<<<<< working copy
+    <div class="form-group">
+    	<div class="form-row">
+    		<div class="col-sm">
+				{{form.username | add_attributes("class","form-control", "placeholder", form.username.label) }}
+			</div>
+		</div>
+	</div>
+=======
+
+	<div class="form-row">
+>>>>>>> merge rev
+
+<<<<<<< working copy
+	<div class="form-group">
+    	<div class="form-row">
+    		<div class="col-xs">
+    			{{form.given_name | add_attributes("class", "form-control", "placeholder", form.given_name.label) }}
+    		</div>
+    		<div class="col-xs">
+    			{{form.surname | add_attributes("class", "form-control", "placeholder", form.surname.label) }}
+=======
+    	<div class="col-sm-3 my-1">
+    		<label for="id_given_name" class="cols-sm-2 control-label sr-only">{{form.given_name.label}}</label>
+    		<div class="input-group">
+    			<div class="input-group-prepend">
+    				<div class="input-group-text">
+    					First Name
+    				</div>
+    			</div>
+    			{{form.given_name | add_css("form-control") }}
+>>>>>>> merge rev
+    		</div>
+    	</div>
+<<<<<<< working copy
+    </div>
+
+    <div class="form-group">
+    	<div class="form-row">
+    		<div class="col-sm">
+    			{{form.email | add_attributes("class", "form-control", "placeholder", form.email.label)}}
+    		</div>
+    	</div>
+    </div>
+
+	<div class="form-group">
+    	<div class="form-row">
+    		<div class="col-sm">
+    			{{form.password1 | add_attributes("class", "form-control", "placeholder", form.password1.label)}}
+    		</div>
+    	</div>
+    	<div class="form-row">
+    		<div class="col-sm">
+    			{{form.password2 | add_attributes("class", "form-control", "placeholder", form.password2.label)}}
+=======
+
+    	<div class="col-sm-3 my-1">
+    		<label for="id_surname" class="cols-sm-2 control-label sr-only">{{form.surname.label}}</label>
+    		<div class="input-group">
+    			<div class="input-group-prepend">
+    				<div class="input-group-text">
+    					Last Name
+    				</div>
+    			</div>
+    			{{form.surname | add_css("form-control") }}
+>>>>>>> merge rev
+    		</div>
+    	</div>
+
+    </div>
+
+
+    <div class="form-row">
+    	
+    	<div class="col-sm-3 my-1">
+    		<label for="id_username" class="cols-sm-2 control-label sr-only">{{form.username.label}}</label>
+    		<div class="input-group">
+    			<div class="input-group-prepend">
+    				<span class="input-group-text">
+    					<i class="far fa-user" aria-hidden="true"></i>
+    				</span>
+    			</div>
+    			{{form.username | add_css("form-control") }}
+    		</div>
+    	</div>
+
+    </div>
+
+
+
+    <div class="form-row">
+    	
+    	<div class="col-sm-3 my-1">
+    		<label for="id_email" class="cols-sm-2 control-label sr-only">{{form.email.label}}</label>
+    		<div class="input-group">
+    			<div class="input-group-prepend">
+    				<span class="input-group-text">
+    					<i class="far fa-envelope" aria-hidden="true"></i>
+    				</span>
+    			</div>
+    			{{form.email | add_css("form-control") }}
+    		</div>
+    	</div>
+
+    </div>
+
+
+    <div class="form-row">
+    	
+    	<div class="col-sm-3 my-1">
+    		<label for="id_password1" class="cols-sm-2 control-label sr-only">{{form.password1.label}}</label>
+    		<div class="input-group">
+    			<div class="input-group-prepend">
+    				<span class="input-group-text">
+    					<i class="far fa-keyboard" aria-hidden="true"></i>
+    				</span>
+    			</div>
+    			{{form.password1 | add_css("form-control") }}
+    		</div>
+    	</div>
+
+    </div>
+
+	    <div class="form-row">
+    	
+    	<div class="col-sm-3 my-1">
+    		<label for="id_password2" class="cols-sm-2 control-label sr-only">{{form.password2.label}}</label>
+    		<div class="input-group">
+    			<div class="input-group-prepend">
+    				<span class="input-group-text">
+    					<i class="far fa-keyboard" aria-hidden="true"></i>
+    				</span>
+    			</div>
+    			{{form.password2 | add_css("form-control") }}
+    		</div>
+    	</div>
+
+    </div>
+
+
+
+    <button type="submit" class="btn btn-primary">Sign up</button>
+</form>
+</div>
+{% endblock %}
